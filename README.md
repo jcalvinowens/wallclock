@@ -20,7 +20,7 @@ Design
 
 The primary goal of this project was to replace several "atomic" clocks in my
 house which never successfully synchronize to [WWVB](https://en.wikipedia.org/wiki/WWVB)
-with clocks that sync to NTP servers. Just for run, a secondary goal was to
+with clocks that sync to NTP servers. Just for fun, a secondary goal was to
 accurately display milliseconds.
 
 The clock is designed around the ESP32-C3, a low power single core RISCV SoC
@@ -29,8 +29,8 @@ MOSFETs to switch each of the 32 LED segments individually, to avoid rolling
 shutter artifacts in photos and videos.
 
 The board is powered by a 1A 12V power brick, through a series diode for reverse
-polarity protection: a small 3.3V LDO powers the esp32, and a tiny PWM-capable
-constant current regulator powers each LED segment.
+polarity protection. A small 3.3V LDO powers the esp32 and registers, and a tiny
+PWM-capable constant current regulator powers each LED segment.
 
 The clock can really count milliseconds, as demonstrated by
 [this video](https://www.youtube.com/watch?v=3n7UssnawdA) taken with a 328fps
