@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>Boring Wall Clock Web UI</title>
+</head>
+
+<body>
+
+<h1>Boring Wall Clock Web UI</h1>
+
+<form action="/" method="post">
+	<p>Clock Mode:</p>
+	<input type="radio" name="mode" value="time" id="mode_time" />
+	<label for="mode_time">Normal</label><br>
+	<input type="radio" name="mode" value="seconds" id="mode_seconds" />
+	<label for="mode_seconds">Seconds</label><br>
+	<input type="radio" name="mode" value="millis" id="mode_millis" />
+	<label for="mode_millis">Milliseconds</label><br>
+	<input type="radio" name="mode" value="monthday" id="mode_monthday" />
+	<label for="mode_monthday">Month/Day</label><br>
+	<input type="radio" name="mode" value="daymonth" id="mode_daymonth" />
+	<label for="mode_daymonth">Day/Month</label><br>
+	<input type="radio" name="mode" value="dayofyear" id="mode_dayofyear" />
+	<label for="mode_dayofyear">Day of Year</label><br>
+	<input type="radio" name="mode" value="dayofweek" id="mode_dayofweek" />
+	<label for="mode_dayofweek">Week of Year / Day of Week</label><br>
+	<input type="radio" name="mode" value="year" id="mode_year" />
+	<label for="mode_year">Year</label><br>
+	<input type="radio" name="mode" value="static" id="mode_static" />
+	<label for="mode_static">Static</label><br><br><br>
+
+	<label for="duty">LED PWM Duty:</label><br>
+	<input type="range" name="duty" id="duty" min="0" max="1023" step="1" value="1023" style="width: 80%;" /><br><br>
+
+	<label for="display">Static Display String:</label><br>
+	<input type="text" id="display" name="display" pattern="[0-9ACEFHLPU_\-\.\*]{1,8}" /><br>
+	<small><pre>Allowed characters: 0123456789ACEFHLPU_-.*</pre></small><br>
+	<input type="submit" value="Fire!" style="height:5em; width:20em" />
+</form>
+
+</body>
+</html>

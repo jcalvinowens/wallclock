@@ -1,0 +1,45 @@
+menu "Boring Wall Clock Configuration"
+
+    config WIFI_SSID
+        string "WiFi SSID"
+        default "myssid"
+        help
+            SSID (network name) to connect to.
+
+    config WIFI_PASSWORD
+        string "WiFi Password"
+        default "mypassword"
+        help
+            WiFi password (WPA or WPA2) to use.
+
+    config NTP_SERVER_HOSTNAME
+        string "NTP Server Hostname"
+        default "pool.ntp.org"
+        help
+            Server to use for NTP.
+
+    config DISPLAY_TZ
+       string "Displayed timezone"
+       default "PST8PDT"
+       help
+           Timezone for the time displayed on the clock face.
+
+    config NTP_SYNC_INTERVAL_MS
+        int "NTP sync interval (milliseconds)"
+        default 60000
+        help
+            How often to sync NTP, in milliseconds.
+
+    config PWM_HZ
+        int "Clock LED PWM driver frequency (hz)"
+        default 40000
+
+    config TIMER_WORK_HZ
+        int "Clock display update frequency (hz)"
+        default 1000
+
+    config SPI_HZ
+        int "SPI shift register frequency (hz)"
+        default 24000000
+
+endmenu
