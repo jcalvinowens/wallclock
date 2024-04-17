@@ -4,6 +4,7 @@ NTP Wall Clock
 This repository contains the hardware design and firmware for a simple digital
 wall clock which synchronizes with NTP servers over wifi.
 
+https://www.youtube.com/shorts/mDYjYWJTemg
 https://www.youtube.com/shorts/xX9GlqPRe6Y
 
 ![](https://static.wbinvd.org/img/wallclock/clock.jpg)
