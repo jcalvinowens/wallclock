@@ -385,15 +385,10 @@ static void update_timer_work(void *arg)
 		char buf[5];
 		int i;
 
-		/*
-		 * -Wformat-truncation is a pain in the ass here... GCC doesn't
-		 * know that tv_* are always positive and tv_usec is bounded
-		 * without the pointless abs() and modulo operations...
-		 */
 		gettimeofday(&tv_now, NULL);
 		snprintf(buf, sizeof(buf), "%02lld%02ld",
-			 llabs(tv_now.tv_sec) % 60LL,
-			 (labs(tv_now.tv_usec) / 10000L) % 100L);
+			 tv_now.tv_sec % 60LL,
+			 tv_now.tv_usec / 10000L);
 
 		for (i = 0; i < 4; i++)
 			newbuffer.digits[i] = led_font[buf[i] - '0'];
@@ -406,8 +401,7 @@ static void update_timer_work(void *arg)
 		int i;
 
 		gettimeofday(&tv_now, NULL);
-		snprintf(buf, sizeof(buf), "%03ld",
-			 (labs(tv_now.tv_usec) / 1000L) % 1000L);
+		snprintf(buf, sizeof(buf), "%03ld", tv_now.tv_usec / 1000L);
 
 		newbuffer.digits[0].h = 1;
 		for (i = 1; i < 4; i++)
